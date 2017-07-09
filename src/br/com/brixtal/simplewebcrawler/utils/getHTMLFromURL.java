@@ -7,7 +7,6 @@ import java.util.Scanner;
 import br.com.brixtal.simplewebcrawler.settings.Url;
 
 public class getHTMLFromURL {
-
 	
 	/**
 	 * 
@@ -15,7 +14,7 @@ public class getHTMLFromURL {
 	 * Thanks for user pek.
 	 * 
 	 */
-	public String getHtml(Url url) {
+	public static String getHtml(Url url) {
 		String content = null;
 		URLConnection connection = null;
 		try {

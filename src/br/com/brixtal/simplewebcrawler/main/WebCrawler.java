@@ -1,30 +1,25 @@
 package br.com.brixtal.simplewebcrawler.main;
 
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.Scanner;
 
+import br.com.brixtal.simplewebcrawler.settings.Content;
 import br.com.brixtal.simplewebcrawler.settings.Url;
 import br.com.brixtal.simplewebcrawler.settings.WebCrawlerProperties;
+import br.com.brixtal.simplewebcrawler.utils.getHTMLFromURL;
 
 public class WebCrawler {
 
 	public static void main(String[] args) {
 
-		Scanner keyboard = new Scanner(System.in);
+		//Load settings or ask them to user.
+		WebCrawlerProperties properties = new WebCrawlerProperties();		
 		
-
-		WebCrawlerProperties properties = new WebCrawlerProperties();
-		if(properties.hasUrlSetted()) {
-			System.out.println("Insert the URL to be crawled.");
-			System.out.print("> ");
-			String input = keyboard.nextLine();
-			try {
-				properties.setUrl(new Url(input));
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-		}
+		//Get HTML from URL
+		Content content = new Content(getHTMLFromURL.getHtml(properties.getUrl()));
+		System.out.println(content.getContent());
+		
 	}
 
 }

@@ -4,8 +4,8 @@ public class Content {
 
 	private String content;
 	
-	public Content() {
-		
+	public Content(String content) {
+		setContent(content);
 	}
 
 	public String getContent() {

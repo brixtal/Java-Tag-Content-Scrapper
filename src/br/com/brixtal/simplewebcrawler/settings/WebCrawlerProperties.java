@@ -10,10 +10,10 @@ public class WebCrawlerProperties {
 	ResourceBundle labels = ResourceBundle.getBundle(Language.getCurrentLanguage());
 	
 	public WebCrawlerProperties() {
-		
+		getUrl();
 	}
 
-	public String getUrl() {
+	public Url getUrl() {
 		if(hasUrlSetted()) {
 			Scanner keyboard = new Scanner(System.in);
 			System.out.println(labels.getString("text.input.url"));
@@ -27,7 +27,7 @@ public class WebCrawlerProperties {
 			}
 		}
 		
-		return url.getUrl();
+		return url;
 	}
 
 
