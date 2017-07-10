@@ -11,7 +11,7 @@ import br.com.brixtal.simplewebcrawler.utils.getHTMLFromURL;
 
 public class WebCrawler {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 
 		//Load settings or ask them to user.
 		WebCrawlerProperties properties = new WebCrawlerProperties();		

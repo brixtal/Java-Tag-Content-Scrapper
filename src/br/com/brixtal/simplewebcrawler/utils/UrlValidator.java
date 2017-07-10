@@ -9,7 +9,7 @@ public class UrlValidator {
 	public static boolean isValidUrl(String url) {
 		
 		Pattern pattern = Pattern.compile(URL_PATTERN);
-		System.out.println(pattern.matcher(url).matches());
+		//System.out.println(pattern.matcher(url).matches());
 		return pattern.matcher(url).matches();	
 		
 	}
