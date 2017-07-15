@@ -4,8 +4,8 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.Scanner;
 
-import br.com.brixtal.simplewebcrawler.settings.Content;
-import br.com.brixtal.simplewebcrawler.settings.Url;
+import br.com.brixtal.simplewebcrawler.code.Content;
+import br.com.brixtal.simplewebcrawler.code.Url;
 import br.com.brixtal.simplewebcrawler.settings.WebCrawlerProperties;
 import br.com.brixtal.simplewebcrawler.utils.getHTMLFromURL;
 
@@ -18,7 +18,8 @@ public class WebCrawler {
 		
 		//Get HTML from URL
 		Content content = new Content(getHTMLFromURL.getHtml(properties.getUrl()));
-		System.out.println(content.getContent());
+
+		//
 		
 	}
 
