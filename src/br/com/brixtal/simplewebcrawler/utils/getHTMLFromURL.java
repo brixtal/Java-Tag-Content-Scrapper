@@ -5,8 +5,8 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.Scanner;
 
+import br.com.brixtal.simplewebcrawler.code.Url;
 import br.com.brixtal.simplewebcrawler.exceptions.HttpError404;
-import br.com.brixtal.simplewebcrawler.settings.Url;
 
 public class getHTMLFromURL {
 	

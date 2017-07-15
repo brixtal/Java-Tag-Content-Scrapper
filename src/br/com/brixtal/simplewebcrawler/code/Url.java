@@ -1,4 +1,4 @@
-package br.com.brixtal.simplewebcrawler.settings;
+package br.com.brixtal.simplewebcrawler.code;
 
 import br.com.brixtal.simplewebcrawler.exceptions.EmptyUrlException;
 import br.com.brixtal.simplewebcrawler.exceptions.InvalidUrlException;

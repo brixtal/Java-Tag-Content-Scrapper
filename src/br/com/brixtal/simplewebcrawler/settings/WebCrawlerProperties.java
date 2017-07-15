@@ -3,6 +3,8 @@ package br.com.brixtal.simplewebcrawler.settings;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
+import br.com.brixtal.simplewebcrawler.code.Url;
+
 public class WebCrawlerProperties {
 
 	private Url url;

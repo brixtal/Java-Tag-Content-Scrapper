@@ -1,4 +1,4 @@
-package br.com.brixtal.simplewebcrawler.settings;
+package br.com.brixtal.simplewebcrawler.code;
 
 public class Content {
 
