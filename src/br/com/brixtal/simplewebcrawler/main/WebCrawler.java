@@ -25,7 +25,7 @@ public class WebCrawler {
 		//Create a list to receive all tags and contents extracted from HTML
 		List<Tag> selectedTagAndContent;
 		
-		//
+		//Start parsing code
 		HtmlParser parser = new HtmlParser();
 		selectedTagAndContent = parser.getTags(content.getContent());
 		

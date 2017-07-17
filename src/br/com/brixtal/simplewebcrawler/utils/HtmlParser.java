@@ -48,7 +48,7 @@ public class HtmlParser {
 		List<Tag> formattedTagAndContent = new ArrayList<Tag>();
 		
 		for(int i = 0; i < tagAndContent.size() ; i++) {
-			Tag tag = new Tag();
+			Tag tag = new Tag(); 
 			
 			String tagType = tagAndContent.get(i).trim();
 			

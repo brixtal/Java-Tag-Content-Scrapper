@@ -11,7 +11,7 @@ public class Tag {
 	public static final String DEF_SPACE = " ";
 	public static final String DEF_EQUALS = "=";
 	public String getTag() {
-		return tag;
+		return tag; 
 	}
 	public void setTag(String tag) {
 		this.tag = tag;
