@@ -24,7 +24,6 @@ public class WebCrawlerProperties {
 			try {
 				setUrl(new Url(input));
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
