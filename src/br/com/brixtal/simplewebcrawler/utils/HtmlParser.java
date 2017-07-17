@@ -1,50 +1,69 @@
 package br.com.brixtal.simplewebcrawler.utils;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 import br.com.brixtal.simplewebcrawler.code.Tag;
+import br.com.brixtal.simplewebcrawler.code.TagType;
 
 public class HtmlParser {
-	
-	String tagContent = "";
-	
-	public void getTags(String content) {
+
+	public List<Tag> getTags(String htmlCode) {
+
+		List<String> selectedTags = new ArrayList<String>();
+		List<String> splitedTagAndContent = new ArrayList<String>();
+		List<Tag> formattedTagAndContent = new ArrayList<Tag>();
 		
-		char[] contentAsChar = content.toCharArray();
-		boolean isParameter = true;
-		boolean isTagDefinition = false;
-		List<Tag> tagList = new ArrayList<Tag>();
-		
-	/* TODO complete here! */	
-		for (char c : contentAsChar) {
-		    if (c == Tag.DEF_INIT) {
-		    	isTagDefinition = true;
-		    }
-		    else if ((c == Tag.DEF_END || c == Tag.DEF_SLASH) && isTagDefinition) {
-		    	isTagDefinition = false;
-		    	tagList.add(new Tag(tagContent.trim()));
-		    }
-		    else if ()
-		    	
+		String[] tagsIntoHTML = htmlCode.split(Tag.DEF_INIT);
+
+		for(String tag : tagsIntoHTML) {
+			if(acceptedTags(tag)) {
+				selectedTags.add(tag);
+			}
 		}
+
+		for(String c : selectedTags) {			
+			splitedTagAndContent.addAll(Arrays.asList(c.split(Tag.DEF_END)));
+		}
+
+		formattedTagAndContent = separateTagAndContent(splitedTagAndContent);
 		
-	}
-	
-	public String getTagContent() {
-		return tagContent;
+		return formattedTagAndContent;
 	}
 
-	public void setTagContent(String tagContent) {
-		this.tagContent = tagContent;
+	public boolean acceptedTags(String tag) {
+		TagType listOfAcceptedTags = new TagType();
+		for(String acceptedTag : listOfAcceptedTags.getListofacceptedtags()) {
+			if(tag.startsWith(acceptedTag)) {
+				return true;
+			}
+		}		
+		return false;
 	}
-	
-	public void addTagContent(char c) {
-		this.tagContent = this.tagContent.concat(String.valueOf(c));
-	}
-	
-	public void clearTagContent() {
-		this.tagContent = "";
+
+	public List<Tag> separateTagAndContent (List<String> tagAndContent) {
+		
+		List<Tag> formattedTagAndContent = new ArrayList<Tag>();
+		
+		for(int i = 0; i < tagAndContent.size() ; i++) {
+			Tag tag = new Tag();
+			
+			String tagType = tagAndContent.get(i).trim();
+			
+			tag.setTag(tagType);			
+			
+			if(!acceptedTags(tagAndContent.get(i+1))) {
+				String contentTag = tagAndContent.get(i+1).trim();
+				tag.setTagContent(contentTag);				
+				i++;
+			}
+			
+			formattedTagAndContent.add(tag);
+		}
+		
+		return formattedTagAndContent;
 	}
 
 }
